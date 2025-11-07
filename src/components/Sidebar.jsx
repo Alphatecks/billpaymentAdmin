@@ -57,7 +57,7 @@ function Sidebar({ activeItem = 'dashboard', onSelect }) {
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
-        <h1 className="sidebar-title">BillPay Admin</h1>
+        <h1 className="sidebar-title">Niel Bill Payment Admin</h1>
       </div>
       <nav className="sidebar-nav">
         {navItems.map((item) => {
