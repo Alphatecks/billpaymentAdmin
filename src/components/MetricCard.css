@@ -1,0 +1,31 @@
+.metric-card {
+  background-color: #f5f5f5;
+  padding: 24px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.metric-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  margin: 0 0 12px 0;
+}
+
+.metric-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.metric-change {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.metric-change.positive {
+  color: #22c55e;
+}
+

@@ -1,0 +1,49 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.dashboard-header {
+  margin-bottom: 8px;
+}
+
+.dashboard-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0 0 8px 0;
+}
+
+.dashboard-subtitle {
+  font-size: 16px;
+  color: #999999;
+  margin: 0;
+  font-weight: 400;
+}
+
+.metrics-section {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.quick-actions-section,
+.recent-activity-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0;
+}
+
+.actions-buttons {
+  display: flex;
+  gap: 16px;
+}
+
