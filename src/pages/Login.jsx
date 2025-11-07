@@ -43,12 +43,7 @@ function Login({ onLogin }) {
             </Button>
           </form>
 
-          <div className="panel-footer">
-            <a href="#" onClick={(e) => e.preventDefault()}>
-              Forget password
-            </a>{' '}
-            <span>Click here</span>
-          </div>
+          <div className="panel-footer" />
         </div>
       </div>
     </div>
