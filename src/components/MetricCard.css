@@ -23,9 +23,16 @@
 .metric-change {
   font-size: 14px;
   font-weight: 500;
+  color: #22c55e;
 }
 
-.metric-change.positive {
-  color: #22c55e;
+.metric-change.negative {
+  color: #ef4444;
+}
+
+.metric-alltime {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #6b7280;
 }
 

@@ -19,6 +19,7 @@ const pages = {
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [authPayload, setAuthPayload] = useState(null)
   const [activePage, setActivePage] = useState('dashboard')
 
   const ActiveComponent = useMemo(() => pages[activePage] ?? Dashboard, [activePage])
@@ -30,12 +31,20 @@ function App() {
   }
 
   if (!isAuthenticated) {
-    return <Login onLogin={() => setIsAuthenticated(true)} />
+    return (
+      <Login
+        onLogin={(payload) => {
+          const authData = payload?.data ?? payload
+          setAuthPayload(authData)
+          setIsAuthenticated(true)
+        }}
+      />
+    )
   }
 
   return (
     <DashboardLayout activeItem={activePage} onSelectMenu={handleMenuSelect}>
-      <ActiveComponent />
+      <ActiveComponent auth={authPayload} />
     </DashboardLayout>
   )
 }

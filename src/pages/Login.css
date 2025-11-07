@@ -130,6 +130,12 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
+.form-error {
+  margin: 4px 0 0 0;
+  font-size: 13px;
+  color: #ef4444;
+}
+
 .btn.full-width {
   width: 100%;
 }

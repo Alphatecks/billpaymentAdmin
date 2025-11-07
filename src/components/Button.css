@@ -13,6 +13,12 @@
   opacity: 0.9;
 }
 
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .btn-primary {
   background-color: #3b82f6;
   color: #ffffff;

@@ -1,14 +1,9 @@
 import './ActivityTable.css'
 
-const tableData = [
-  { user: 'Sophia Clark', type: 'Bill Payment', amount: '₦100', status: 'Completed', date: '2024-07-26' },
-  { user: 'Ethan Carter', type: 'Airtime Purchase', amount: '₦20', status: 'Completed', date: '2024-07-26' },
-  { user: 'Olivia Bennett', type: 'Data Purchase', amount: '₦50', status: 'Pending', date: '2024-07-25' },
-  { user: 'Liam Foster', type: 'Naira Deposit', amount: '₦200', status: 'Completed', date: '2024-07-25' },
-  { user: 'Ava Hughes', type: 'Bill Payment', amount: '₦75', status: 'Completed', date: '2024-07-24' },
-]
+function ActivityTable({ rows = [], isLoading = false, errorMessage = '' }) {
+  const showEmpty = !isLoading && rows.length === 0
+  const placeholderMessage = errorMessage || 'No recent activity available.'
 
-function ActivityTable() {
   return (
     <div className="activity-table-container">
       <table className="activity-table">
@@ -22,17 +17,31 @@ function ActivityTable() {
           </tr>
         </thead>
         <tbody>
-          {tableData.map((row, index) => (
-            <tr key={index}>
-              <td>{row.user}</td>
-              <td>{row.type}</td>
-              <td>{row.amount}</td>
-              <td>
-                <span className="status-badge">{row.status}</span>
+          {isLoading ? (
+            <tr>
+              <td colSpan={5} className="table-placeholder">
+                Loading recent activity…
               </td>
-              <td>{row.date}</td>
             </tr>
-          ))}
+          ) : showEmpty ? (
+            <tr>
+              <td colSpan={5} className="table-placeholder">
+                {placeholderMessage}
+              </td>
+            </tr>
+          ) : (
+            rows.map((row, index) => (
+              <tr key={`${row.id || row.user || index}-${index}`}>
+                <td>{row.user || row.customer || '-'}</td>
+                <td>{row.type || row.transactionType || '-'}</td>
+                <td>{row.amount || '-'}</td>
+                <td>
+                  <span className="status-badge">{row.status || '-'}</span>
+                </td>
+                <td>{row.date || row.createdAt || '-'}</td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>
